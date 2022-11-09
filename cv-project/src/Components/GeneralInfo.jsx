@@ -33,6 +33,14 @@ export const GeneralInfo = () => {
           <input type="file" className="form-control" id="customFile" />
         </div>
       </form>
+      <div className="row">
+        <button type="button" className=" col btn btn-dark">
+          Edit
+        </button>
+        <button type="button" className=" col btn btn-dark">
+          Submit
+        </button>
+      </div>
     </div>
   );
 };
