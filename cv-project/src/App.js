@@ -1,11 +1,11 @@
-import './App.css';
-import { InputSide } from './InputSide';
-import { OutputSide } from './OutputSide';
+import './styles/App.css';
+import { InputSide } from './Components/InputSide';
+import { OutputSide } from './Components/OutputSide';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <div>
+    <div className='row'>
       <InputSide/>
       <OutputSide/>
     </div>

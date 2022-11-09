@@ -5,7 +5,7 @@ import { WorkInfo } from './WorkInfo';
 
 export function InputSide() {
     return (
-      <div className="">
+      <div className="col">
         <GeneralInfo/>
         <EducationInfo/>
         <WorkInfo/>
