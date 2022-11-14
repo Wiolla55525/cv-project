@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <div className='row'>
+    <div className='row app'>
       <InputSide/>
       <OutputSide/>
     </div>

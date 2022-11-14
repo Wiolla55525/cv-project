@@ -2,7 +2,7 @@ import React from "react";
 
 export const WorkInfo = () => {
   return (
-    <div className="form-info">
+    <div className="form-info work-info">
       <h2>Employment</h2>
 
       <form className="p-4">

@@ -2,7 +2,7 @@ import React from "react";
 
 export const EducationInfo = () => {
   return (
-    <div className="form-info">
+    <div className="form-info education">
       <h2>Education</h2>
 
       <form className="p-4">

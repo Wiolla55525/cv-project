@@ -2,7 +2,7 @@ import {} from "./GeneralInfo";
 
 export function OutputSide() {
   return (
-    <div className="col m-2">
+    <div className="col m-2 output-side">
       <div className="">
         <div className="d-flex">
           <p className="fw-bolder fs-2">Personal Information</p>

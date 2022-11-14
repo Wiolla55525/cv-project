@@ -1,0 +1,31 @@
+.app{
+    background: #000 url(./background.jpg) fixed 100% 100%;
+}
+
+.education{
+    background-color: rgba(44, 158, 52, 0.25);
+    color: azure;
+    border-radius: 3vh;
+    padding: 2vh;
+    margin-bottom: 2vh;
+}
+
+.general-info {
+    background-color: rgba(14, 251, 252, 0.25);
+    color: azure;
+    border-radius: 3vh;
+    padding: 2vh;
+    margin-bottom: 2vh;
+}
+
+.work-info {
+    background-color:rgba(158, 134, 255, 0.25);
+    color: azure;
+    border-radius: 3vh;
+    padding: 2vh;
+    margin-bottom: 2vh;
+}
+
+.output-side {
+    color: aliceblue;
+}

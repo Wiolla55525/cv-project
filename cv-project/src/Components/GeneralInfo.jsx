@@ -2,7 +2,7 @@ import React from "react";
 
 export const GeneralInfo = () => {
   return (
-    <div className="form-info">
+    <div className="form-info general-info">
       <h2>Personal Information</h2>
 
       <form className="p-4">
@@ -18,11 +18,11 @@ export const GeneralInfo = () => {
         </div>
         <div className="row">
           <div className="col-7">
-            <label for="email">Email address</label>
+            <label for="email">E-mail</label>
             <input type="email" className="col form-control" />
           </div>
           <div className="col">
-            <label for="phoneNumber">Phone number</label>
+            <label for="phoneNumber">Phone </label>
             <input className="form-control" type="number" />
           </div>
         </div>
