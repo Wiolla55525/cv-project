@@ -24,18 +24,18 @@ export const WorkInfo = () => {
         </div>
         <div className="row form-group">
           <div className="col form-group">
-            <div class="md-form md-outline input-with-post-icon datepicker">
+            <div className="md-form md-outline input-with-post-icon datepicker">
               <label for="startDate">Start Date</label>
               <input
                 placeholder="Select date"
                 type="date"
                 id="startDate"
-                class="form-control"
+                className="form-control"
               />
             </div>
           </div>
           <div className="col form-group">
-            <div class="md-form md-outline input-with-post-icon datepicker">
+            <div className="md-form md-outline input-with-post-icon datepicker">
               <div className=" form-check-inline">
                 <label for="endDate">End Date</label>
                 <div className="form-check-inline">

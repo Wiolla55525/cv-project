@@ -1,24 +1,39 @@
 import {} from "./GeneralInfo";
+import React from 'react';
+import { GeneralInfo } from "./GeneralInfo";
 
-export function OutputSide() {
+export function OutputSide(props) {
+
+  // let { personalInfo, personalEducation, personalEmployment } = props;
+
+    // let {firstName, lastName, photo: photoURL, email, phoneNumber } = personalInfo;
+
+    // let {education, school, city, startDate, endDate, description } = personalEducation;
+
+    // let { position, employer, start, end, description2 } = personalEmployment;
+
+
+
   return (
     <div className="col m-2 output-side">
-      <div className="">
+      <div className=""  >
         <div className="d-flex">
-          <p className="fw-bolder fs-2">Personal Information</p>
+          <p className="fw-bolder fs-2">Personal Information </p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">{""}</p>
+          <p className="fw-bold">{props.firstName}  {props.lastName} </p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Email Address: </p>
+          <p className="fw-bold">Email Address: {props.email} </p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Phone Number: </p>
+          <p className="fw-bold">Phone Number: {props.phone} </p>
           <p>{""}</p>
         </div>
       </div>
+
+      
       <hr />
 
       <div>
@@ -26,28 +41,28 @@ export function OutputSide() {
           <p className="fw-bolder fs-2">Education</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Education:</p>
+          <p className="fw-bold">Education: { props.education }</p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">School:</p>
+          <p className="fw-bold">School: { props.school }</p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">City:</p>
+          <p className="fw-bold">City: { props.city }</p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Start Date:</p>
+          <p className="fw-bold">Start Date: { props.startDate} </p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">End Date:</p>
+          <p className="fw-bold">End Date: { props.endDate }</p>
           <p>{""}</p>
         </div>
 
         <div className="d-flex">
-          <p className="fw-bold">Description:</p>
+          <p className="fw-bold">Description: { props.description }</p>
           <p>{""}</p>
         </div>
       </div>
@@ -58,23 +73,23 @@ export function OutputSide() {
           <p className="d-flex">{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Position:</p>
+          <p className="fw-bold">Position: { props.position }</p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Employer:</p>
+          <p className="fw-bold">Employer: { props.employer }</p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Start Date:</p>
+          <p className="fw-bold">Start Date: { props.startDate }</p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">End Date:</p>
+          <p className="fw-bold">End Date: { props.endDate }</p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Description:</p>
+          <p className="fw-bold">Description: { props.description }</p>
           <p>{""}</p>
         </div>
 
