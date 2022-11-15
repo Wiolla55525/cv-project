@@ -21,14 +21,14 @@ export function OutputSide(props) {
           <p className="fw-bolder fs-2">Personal Information </p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">{props.firstName}  {props.lastName} </p>
+          <p className="fw-bold">{props.general.firstName}  {props.general.lastName} </p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Email Address: {props.email} </p>
+          <p className="fw-bold">Email Address: {props.general.email} </p>
           <p>{""}</p>
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Phone Number: {props.phone} </p>
+          <p className="fw-bold">Phone Number: {props.general.number} </p>
           <p>{""}</p>
         </div>
       </div>

@@ -47,7 +47,7 @@ const [general, setGeneral] = useState(generalState);
         <EducationInfo />
         <WorkInfo />
       </div>
-      <OutputSide />
+      <OutputSide general={general}/>
     </div>
   );
 }

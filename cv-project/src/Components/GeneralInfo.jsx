@@ -66,4 +66,3 @@ export const GeneralInfo = (props) => {
   );
 };
 
-// value={} onChange={}
