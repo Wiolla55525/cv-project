@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export const GeneralInfo = (props) => {
 
@@ -28,30 +28,30 @@ export const GeneralInfo = (props) => {
       <form className="p-4" onSubmit={onSubmit}>
         <div className="row">
           <div className="col">
-            <label for="name">First name</label>
+            <label htmlFor="name">First name</label>
             <input name="firstName" type="text" id="firstName" 
             className="form-control"  onChange={onChange}/>
           </div>
           <div className="col">
-            <label for="lastName">Last Name</label>
+            <label htmlFor="lastName">Last Name</label>
             <input name="lastName"type="text" id="lastName" 
             className="form-control"  onChange={onChange}/>
           </div>
         </div>
         <div className="row">
           <div className="col-7">
-            <label for="email">E-mail</label>
+            <label htmlFor="email">E-mail</label>
             <input name="email" type="email" id="email" 
             onChange={onChange} className="col form-control" />
           </div>
           <div className="col">
-            <label for="number">Phone </label>
+            <label htmlFor="number">Phone </label>
             <input name="number" className="form-control" id="phoneNumber" 
             onChange={onChange} type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{2}'/>
           </div>
         </div>
         <div className="row p-4">
-          <label className="form-label" for="customFile">
+          <label className="form-label" htmlFor="customFile">
             Insert Photo
           </label>
           <input type="file" className="form-control" id="customFile" />

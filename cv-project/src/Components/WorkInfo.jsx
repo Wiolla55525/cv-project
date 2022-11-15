@@ -8,24 +8,24 @@ export const WorkInfo = () => {
       <form className="p-4">
         <div className="row form-group">
           <div className="col form-group">
-            <label for="position">Position</label>
+            <label htmlFor="position">Position</label>
             <input type="text" className="form-control" />
           </div>
         </div>
         <div className="row form-group">
           <div className="col form-group">
-            <label for="employer">Employer</label>
+            <label htmlFor="employer">Employer</label>
             <input type="text" className="col form-control" />
           </div>
           <div className="col form-group">
-            <label for="city">City</label>
+            <label htmlFor="city">City</label>
             <input className="form-control" type="text" />
           </div>
         </div>
         <div className="row form-group">
           <div className="col form-group">
             <div className="md-form md-outline input-with-post-icon datepicker">
-              <label for="startDate">Start Date</label>
+              <label htmlFor="startDate">Start Date</label>
               <input
                 placeholder="Select date"
                 type="date"
@@ -37,10 +37,10 @@ export const WorkInfo = () => {
           <div className="col form-group">
             <div className="md-form md-outline input-with-post-icon datepicker">
               <div className=" form-check-inline">
-                <label for="endDate">End Date</label>
+                <label htmlFor="endDate">End Date</label>
                 <div className="form-check-inline">
                   <input type="checkbox" className="form-check-input" />
-                  <label className="form-check-label" for="studiesPresent">
+                  <label className="form-check-label" htmlFor="studiesPresent">
                     Present
                   </label>
                 </div>
@@ -55,7 +55,7 @@ export const WorkInfo = () => {
           </div>
         </div>
         <div className="row form-group p-2">
-          <label for="textarea">Description</label>
+          <label htmlFor="textarea">Description</label>
           <textarea
             className="form-control"
             id="description"

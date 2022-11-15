@@ -2,35 +2,35 @@ import { EducationInfo } from "./EducationInfo";
 import { GeneralInfo } from "./GeneralInfo";
 import { WorkInfo } from "./WorkInfo";
 import "../styles/App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { OutputSide } from "./OutputSide";
 
 export function InputSide() {
-
-  const  generalState = {
+  const generalState = {
     firstName: "",
     lastName: "",
     email: "",
-    phone: ""
-};
-const  educationState = {
-  education: "",
-  school: "",
-  city: "",
-  startDate: "",
-  endDate: "",
-  description: ""
-}
-const  workState = {
-position: "",
-employer: "",
-startDate: "",
-endDate: "",
-description: ""
-}
+    phone: "",
+  };
+  const educationState = {
+    education: "",
+    school: "",
+    city: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  };
+  const workState = {
+    position: "",
+    employer: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  };
 
-const [general, setGeneral] = useState(generalState);
-
+  const [general, setGeneral] = useState(generalState);
+  const [education, setEducation] = useState(educationState);
+  const [work, setWork] = useState(workState);
 
   // const handleGeneral = (e) => {
   //   setGeneralInfo({
@@ -43,11 +43,15 @@ const [general, setGeneral] = useState(generalState);
   return (
     <div className="row">
       <div className="col m-2 input-side">
-        <GeneralInfo setGeneral={setGeneral}/>
-        <EducationInfo />
-        <WorkInfo />
+        <GeneralInfo setGeneral={setGeneral} />
+        <EducationInfo setEducation={setEducation} />
+        <WorkInfo setWork={setWork}/>
       </div>
-      <OutputSide general={general}/>
+      <OutputSide 
+      general={general} 
+      education={education} 
+      work={work}
+      />
     </div>
   );
 }
