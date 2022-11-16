@@ -1,28 +1,24 @@
 import React, { useState } from "react";
 
 export const WorkInfo = (props) => {
-
-  const [workInfo, setWorkInfo]  = useState({
+  const [workInfo, setWorkInfo] = useState({
     position: "",
     employer: "",
     startDate: "",
     endDate: "",
     description: "",
   });
-  
+
   const onChange = (e) => {
     e.preventDefault();
     const name = e.target.name;
-    setWorkInfo({...workInfo, [name] : e.target.value});
-  }
-  
+    setWorkInfo({ ...workInfo, [name]: e.target.value });
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     props.setWork(workInfo);
-    console.log(workInfo)
-  }
-  
-
+  };
 
   return (
     <div className="form-info work-info">
@@ -32,20 +28,32 @@ export const WorkInfo = (props) => {
         <div className="row form-group">
           <div className="col form-group">
             <label htmlFor="position">Position</label>
-            <input type="text" className="form-control" 
-            name="position" onChange={onChange}/>
+            <input
+              type="text"
+              className="form-control"
+              name="position"
+              onChange={onChange}
+            />
           </div>
         </div>
         <div className="row form-group">
           <div className="col form-group">
             <label htmlFor="employer">Employer</label>
-            <input type="text" className="col form-control" 
-            name="employer" onChange={onChange}/>
+            <input
+              type="text"
+              className="col form-control"
+              name="employer"
+              onChange={onChange}
+            />
           </div>
           <div className="col form-group">
             <label htmlFor="city">City</label>
-            <input className="form-control" type="text"
-            name="city" onChange={onChange}/>
+            <input
+              className="form-control"
+              type="text"
+              name="city"
+              onChange={onChange}
+            />
           </div>
         </div>
         <div className="row form-group">
@@ -67,8 +75,13 @@ export const WorkInfo = (props) => {
               <div className=" form-check-inline">
                 <label htmlFor="endDate">End Date</label>
                 <div className="form-check-inline">
-                  <input type="checkbox" className="form-check-input" 
-                  name="present" onChange={onChange}/>
+                  <input
+                    type="checkbox"
+                    value="Present"
+                    className="form-check-input"
+                    name="present"
+                    onChange={onChange}
+                  />
                   <label className="form-check-label" htmlFor="studiesPresent">
                     Present
                   </label>
@@ -100,7 +113,7 @@ export const WorkInfo = (props) => {
         <button type="button" className=" col btn btn-dark">
           Edit
         </button>
-        <button  type="submit" onClick={onSubmit} className=" col btn btn-dark">
+        <button type="submit" onClick={onSubmit} className=" col btn btn-dark">
           Submit
         </button>
       </div>

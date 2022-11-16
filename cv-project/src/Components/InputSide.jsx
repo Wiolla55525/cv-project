@@ -39,21 +39,15 @@ export function InputSide() {
   //   })
   //   console.log(general);
   // };
-  console.log(general);
-  console.log(education);
-  console.log(work);
+
   return (
     <div className="row">
       <div className="col m-2 input-side">
         <GeneralInfo setGeneral={setGeneral} />
         <EducationInfo setEducation={setEducation} />
-        <WorkInfo setWork={setWork}/>
+        <WorkInfo setWork={setWork} />
       </div>
-      <OutputSide 
-      general={general} 
-      education={education} 
-      work={work}
-      />
+      <OutputSide general={general} education={education} work={work} />
     </div>
   );
 }
