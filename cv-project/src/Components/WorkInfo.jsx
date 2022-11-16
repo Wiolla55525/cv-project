@@ -110,11 +110,14 @@ export const WorkInfo = (props) => {
         </div>
       </form>
       <div className="row">
-        <button type="button" className=" col btn btn-dark">
-          Edit
-        </button>
         <button type="submit" onClick={onSubmit} className=" col btn btn-dark">
           Submit
+        </button>
+        <button type="button" className=" col btn btn-dark"
+>          Delete
+        </button>
+        <button type="add" className=" col btn btn-dark">
+          Add new
         </button>
       </div>
     </div>

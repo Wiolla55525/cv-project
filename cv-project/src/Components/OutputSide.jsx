@@ -61,7 +61,7 @@ export function OutputSide(props) {
         </div>
         <div className="d-flex">
           <p className="fw-bold">Position: </p>
-          <p>{props.education.education}</p>
+          <p>{props.work.position}</p>
         </div>
         <div className="d-flex">
           <p className="fw-bold">Employer: </p>
