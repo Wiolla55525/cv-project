@@ -8,7 +8,7 @@ const [educationInfo, setEducationInfo]  = useState({
   city: "",
   startDate: "",
   endDate: "",
-  description: ""
+  description: "",
 })
 
 const onChange = (e) => {
@@ -19,7 +19,7 @@ const onChange = (e) => {
 
 const onSubmit = (e) => {
   e.preventDefault();
-  props.setEducation([...props.education, educationInfo]);
+  props.setEducation(educationInfo);
   console.log(educationInfo)
 }
 
@@ -38,16 +38,19 @@ const onSubmit = (e) => {
         <div className="row">
           <div className="col">
             <label htmlFor="school">School</label>
-            <input name="school" type="text" className="col form-control" onChange={onChange}/>
+            <input name="school" type="text" 
+            className="col form-control" onChange={onChange}/>
           </div>
           <div className="col">
             <label htmlFor="city">City</label>
-            <input name="city" className="form-control" type="text" onChange={onChange}/>
+            <input name="city" className="form-control" 
+            type="text" onChange={onChange}/>
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <div className="md-form md-outline input-with-post-icon datepicker">
+            <div className="md-form md-outline input-with-post-icon 
+            datepicker">
               <label htmlFor="startDate">Start Date</label>
               <input
                 placeholder="Select date"
@@ -63,8 +66,8 @@ const onSubmit = (e) => {
             <div className="md-form md-outline input-with-post-icon datepicker">
               <div className=" form-check-inline">
                 <label htmlFor="endDate">End Date</label>
-                <div className="form-check-inline">
-                  <input type="checkbox" className="form-check-input" />
+                <div className="form-check-inline" >
+                  <input type="checkbox" className="form-check-input" onChange={onChange}/>
                   <label className="form-check-label" htmlFor="studiesPresent">
                     Present
                   </label>
@@ -96,7 +99,7 @@ const onSubmit = (e) => {
         <button type="button" className=" col btn btn-dark">
           Edit
         </button>
-        <button onSubmit={onSubmit} type="submit" className=" col btn btn-dark">
+        <button onClick={onSubmit} type="submit" className=" col btn btn-dark">
           Submit
         </button>
       </div>

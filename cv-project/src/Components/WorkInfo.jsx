@@ -1,25 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const WorkInfo = () => {
+export const WorkInfo = (props) => {
+
+  const [workInfo, setWorkInfo]  = useState({
+    position: "",
+    employer: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  });
+  
+  const onChange = (e) => {
+    e.preventDefault();
+    const name = e.target.name;
+    setWorkInfo({...workInfo, [name] : e.target.value});
+  }
+  
+  const onSubmit = (e) => {
+    e.preventDefault();
+    props.setWork(workInfo);
+    console.log(workInfo)
+  }
+  
+
+
   return (
     <div className="form-info work-info">
       <h2>Employment</h2>
 
-      <form className="p-4">
+      <form className="p-4" onSubmit={onSubmit}>
         <div className="row form-group">
           <div className="col form-group">
             <label htmlFor="position">Position</label>
-            <input type="text" className="form-control" />
+            <input type="text" className="form-control" 
+            name="position" onChange={onChange}/>
           </div>
         </div>
         <div className="row form-group">
           <div className="col form-group">
             <label htmlFor="employer">Employer</label>
-            <input type="text" className="col form-control" />
+            <input type="text" className="col form-control" 
+            name="employer" onChange={onChange}/>
           </div>
           <div className="col form-group">
             <label htmlFor="city">City</label>
-            <input className="form-control" type="text" />
+            <input className="form-control" type="text"
+            name="city" onChange={onChange}/>
           </div>
         </div>
         <div className="row form-group">
@@ -31,6 +57,8 @@ export const WorkInfo = () => {
                 type="date"
                 id="startDate"
                 className="form-control"
+                name="startDate"
+                onChange={onChange}
               />
             </div>
           </div>
@@ -39,7 +67,8 @@ export const WorkInfo = () => {
               <div className=" form-check-inline">
                 <label htmlFor="endDate">End Date</label>
                 <div className="form-check-inline">
-                  <input type="checkbox" className="form-check-input" />
+                  <input type="checkbox" className="form-check-input" 
+                  name="present" onChange={onChange}/>
                   <label className="form-check-label" htmlFor="studiesPresent">
                     Present
                   </label>
@@ -50,6 +79,8 @@ export const WorkInfo = () => {
                 type="date"
                 id="endDate"
                 className="form-control"
+                name="endDate"
+                onChange={onChange}
               />
             </div>
           </div>
@@ -60,6 +91,8 @@ export const WorkInfo = () => {
             className="form-control"
             id="description"
             rows="5"
+            name="description"
+            onChange={onChange}
           ></textarea>
         </div>
       </form>
@@ -67,7 +100,7 @@ export const WorkInfo = () => {
         <button type="button" className=" col btn btn-dark">
           Edit
         </button>
-        <button type="button" className=" col btn btn-dark">
+        <button  type="submit" onClick={onSubmit} className=" col btn btn-dark">
           Submit
         </button>
       </div>

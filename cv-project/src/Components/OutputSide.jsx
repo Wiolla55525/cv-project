@@ -1,6 +1,10 @@
 import React from 'react';
 
 export function OutputSide(props) {
+  console.log(props.education)
+  console.log(props.education.education)
+  console.log(props.general.firstName)
+  console.log(props.work.employer)
 
   return (
     <div className="col m-2 output-side">
@@ -17,7 +21,7 @@ export function OutputSide(props) {
         </div>
         <div className="d-flex">
           <p className="fw-bold">Phone Number:  </p>
-          <p>{props.general.number}</p>
+          <p>{props.general.phone}</p>
         </div>
       </div>
 
@@ -60,11 +64,15 @@ export function OutputSide(props) {
         </div>
         <div className="d-flex">
           <p className="fw-bold">Position: </p>
-          <p>{ props.work.position }</p>
+          <p>{ props.education.education }</p>
         </div>
         <div className="d-flex">
           <p className="fw-bold">Employer: </p>
           <p>{ props.work.employer }</p>
+        </div>
+        <div className="d-flex">
+          <p className="fw-bold">City: </p>
+          <p>{ props.work.city }</p>
         </div>
         <div className="d-flex">
           <p className="fw-bold">Start Date: </p>
@@ -73,7 +81,9 @@ export function OutputSide(props) {
         <div className="d-flex">
           <p className="fw-bold">End Date: </p>
           <p>{ props.work.endDate }</p>
+          <p>{props.work.present}</p>
         </div>
+      
         <div className="d-flex">
           <p className="fw-bold">Description: </p>
           <p>{ props.work.description }</p>

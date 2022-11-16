@@ -39,7 +39,9 @@ export function InputSide() {
   //   })
   //   console.log(general);
   // };
-
+  console.log(general);
+  console.log(education);
+  console.log(work);
   return (
     <div className="row">
       <div className="col m-2 input-side">

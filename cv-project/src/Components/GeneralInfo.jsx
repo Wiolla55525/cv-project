@@ -46,7 +46,7 @@ export const GeneralInfo = (props) => {
           </div>
           <div className="col">
             <label htmlFor="number">Phone </label>
-            <input name="number" className="form-control" id="phoneNumber" 
+            <input name="phone" className="form-control" id="phoneNumber" 
             onChange={onChange} type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{2}'/>
           </div>
         </div>
