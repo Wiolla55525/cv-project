@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 export const EducationInfo = (props) => {
+    
+  const uniqueID = Date.now() + Math.random();
+  console.log(uniqueID);
+
   const [educationInfo, setEducationInfo] = useState({
     education: "",
     school: "",
@@ -20,9 +24,9 @@ export const EducationInfo = (props) => {
     e.preventDefault();
     props.setEducation(educationInfo);
   };
-
+  
   return (
-    <div className="form-info education">
+    <div className="form-info education" name={props.education}>
       <h2>Education</h2>
 
       <form className="p-4" onSubmit={onSubmit}>
@@ -113,12 +117,17 @@ export const EducationInfo = (props) => {
         </div>
       </form>
       <div className="row">
-        <button type="button" className=" col btn btn-dark">
-          Edit
-        </button>
+       
         <button onClick={onSubmit} type="submit" className=" col btn btn-dark">
           Submit
         </button>
+
+         {/* <button type="button" className=" col btn btn-dark">
+          Edit
+        </button>
+        <button onClick={}type="button" className=" col btn btn-dark">
+          Add new
+        </button> */}
       </div>
     </div>
   );
