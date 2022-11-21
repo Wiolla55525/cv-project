@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext, createContext } from "react";
+
+export const FormContext = createContext({});
 
 export const WorkInfo = (props) => {
+  const { handleAdd, formValues, handleChange, handleCurrent } = useContext(FormContext);
+
   const [workInfo, setWorkInfo] = useState({
     position: "",
     employer: "",
@@ -10,13 +14,11 @@ export const WorkInfo = (props) => {
   });
 
   const onChange = (e) => {
-    e.preventDefault();
     const name = e.target.name;
     setWorkInfo({ ...workInfo, [name]: e.target.value });
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
     props.setWork(workInfo);
   };
 

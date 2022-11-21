@@ -1,6 +1,14 @@
 import React from "react";
 
 export function OutputSide(props) {
+  const deleteButton = () => {
+    console.log('deleting info')
+  }
+
+  const editButton = () => {
+    console.log('editing info')
+  }
+
   return (
     <div className="col m-2 output-side">
       <div className="">
@@ -62,7 +70,9 @@ export function OutputSide(props) {
               </div>
             </div>
             <div className="col">
-              <button className="btn btn-primary">Delete</button>
+              <button onClick={() => {editButton()}} className="col btn btn-danger">Edit</button>
+              <button onClick={deleteButton} className="col btn btn-primary">Delete</button>
+
             </div>
           </div>
           {/* ))} */}
@@ -105,8 +115,10 @@ export function OutputSide(props) {
             <hr />
           </div>
           <div className="col">
-            <button className="btn btn-primary">Delete</button>
-          </div>
+              <button className="col btn btn-danger">Edit</button>
+              <button className="col btn btn-primary">Delete</button>
+
+            </div>
         </div>
       </div>
     </div>

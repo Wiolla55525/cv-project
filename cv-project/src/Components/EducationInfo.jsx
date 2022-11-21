@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export const EducationInfo = (props) => {
+  
   const [educationInfo, setEducationInfo] = useState({
     education: "",
     school: "",
@@ -10,14 +11,16 @@ export const EducationInfo = (props) => {
     description: "",
   });
 
+  const AppContext = React.createContext();
+  const updateText = useContext(AppContext);
+
+
   const onChange = (e) => {
-    e.preventDefault();
     const name = e.target.name;
     setEducationInfo({ ...educationInfo, [name]: e.target.value });
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
     props.setEducation(educationInfo);
   };
 
@@ -34,6 +37,7 @@ export const EducationInfo = (props) => {
               type="text"
               className="form-control"
               onChange={onChange}
+              required
             />
           </div>
         </div>
@@ -45,6 +49,7 @@ export const EducationInfo = (props) => {
               type="text"
               className="col form-control"
               onChange={onChange}
+              required
             />
           </div>
           <div className="col">
@@ -54,6 +59,7 @@ export const EducationInfo = (props) => {
               className="form-control"
               type="text"
               onChange={onChange}
+              required
             />
           </div>
         </div>
@@ -71,6 +77,7 @@ export const EducationInfo = (props) => {
                 id="startDate"
                 className="form-control"
                 onChange={onChange}
+                required
               />
             </div>
           </div>
@@ -84,6 +91,7 @@ export const EducationInfo = (props) => {
                     className="form-check-input"
                     value="Present"
                     onChange={onChange}
+                    required
                   />
                   <label className="form-check-label" htmlFor="studiesPresent">
                     Present
@@ -97,6 +105,7 @@ export const EducationInfo = (props) => {
                 id="endDate"
                 className="form-control"
                 onChange={onChange}
+                required
               />
             </div>
           </div>
@@ -109,6 +118,7 @@ export const EducationInfo = (props) => {
             id="description"
             rows="3"
             onChange={onChange}
+            required
           ></textarea>
         </div>
       </form>
