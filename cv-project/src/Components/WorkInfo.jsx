@@ -111,14 +111,9 @@ export const WorkInfo = (props) => {
       </form>
       <div className="row">
         <button type="submit" onClick={onSubmit} className=" col btn btn-dark">
-          Submit
+          Add New
         </button>
-        <button type="button" className=" col btn btn-dark"
->          Delete
-        </button>
-        <button type="add" className=" col btn btn-dark">
-          Add new
-        </button>
+
       </div>
     </div>
   );

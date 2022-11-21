@@ -28,9 +28,11 @@ export function OutputSide(props) {
         <div className="d-flex">
           <p className="fw-bolder fs-2">Education</p>
         </div>
-        {props.education.length > 0 && (
-          <section>
-            {props.education.map(() => (
+        {/* {props.education.length > 0 && ( */}
+        <section>
+          {/* {props.education.map(() => ( */}
+          <div className="row">
+            <div className="col">
               <div>
                 <div className="d-flex">
                   <p className="fw-bold">Education: </p>
@@ -58,42 +60,53 @@ export function OutputSide(props) {
                   <p>{props.education.description}</p>
                 </div>
               </div>
-            ))}
-          </section>
-        )}
+            </div>
+            <div className="col">
+              <button className="btn btn-primary">Delete</button>
+            </div>
+          </div>
+          {/* ))} */}
+        </section>
+        {/* )} */}
         <hr />
-        <div>
-          <div className="d-flex">
-            <p className="fw-bolder fs-2">Employment:</p>
-          </div>
-          <div className="d-flex">
-            <p className="fw-bold">Position: </p>
-            <p>{props.work.position}</p>
-          </div>
-          <div className="d-flex">
-            <p className="fw-bold">Employer: </p>
-            <p>{props.work.employer}</p>
-          </div>
-          <div className="d-flex">
-            <p className="fw-bold">City: </p>
-            <p>{props.work.city}</p>
-          </div>
-          <div className="d-flex">
-            <p className="fw-bold">Start Date: </p>
-            <p>{props.work.startDate}</p>
-          </div>
-          <div className="d-flex">
-            <p className="fw-bold">End Date: </p>
-            <p>{props.work.endDate}</p>
-            <p>{props.work.present}</p>
-          </div>
 
-          <div className="d-flex">
-            <p className="fw-bold">Description: </p>
-            <p>{props.work.description}</p>
-          </div>
+        <div className="d-flex">
+          <p className="fw-bolder fs-2">Employment:</p>
+        </div>
+        <div className="row">
+          <div className="col">
+            <div className="d-flex">
+              <p className="fw-bold">Position: </p>
+              <p>{props.work.position}</p>
+            </div>
+            <div className="d-flex">
+              <p className="fw-bold">Employer: </p>
+              <p>{props.work.employer}</p>
+            </div>
+            <div className="d-flex">
+              <p className="fw-bold">City: </p>
+              <p>{props.work.city}</p>
+            </div>
+            <div className="d-flex">
+              <p className="fw-bold">Start Date: </p>
+              <p>{props.work.startDate}</p>
+            </div>
+            <div className="d-flex">
+              <p className="fw-bold">End Date: </p>
+              <p>{props.work.endDate}</p>
+              <p>{props.work.present}</p>
+            </div>
 
-          <hr />
+            <div className="d-flex">
+              <p className="fw-bold">Description: </p>
+              <p>{props.work.description}</p>
+            </div>
+
+            <hr />
+          </div>
+          <div className="col">
+            <button className="btn btn-primary">Delete</button>
+          </div>
         </div>
       </div>
     </div>
