@@ -1,6 +1,13 @@
 import React from "react";
 
+import { createContext, useContext } from 'react';
+
+export const FormContext = createContext({});
+
 export function OutputSide(props) {
+  const { generalState, handleDelete } = useContext(FormContext);
+  const { educationValues } = generalState;
+
   const deleteButton = () => {
     console.log('deleting info')
   }
@@ -36,9 +43,8 @@ export function OutputSide(props) {
         <div className="d-flex">
           <p className="fw-bolder fs-2">Education</p>
         </div>
-        {/* {props.education.length > 0 && ( */}
-        <section>
-          {/* {props.education.map(() => ( */}
+        {educationValues.map((index) => {
+        return (<section key={index}>
           <div className="row">
             <div className="col">
               <div>
@@ -71,14 +77,14 @@ export function OutputSide(props) {
             </div>
             <div className="col">
               <button onClick={() => {editButton()}} className="col btn btn-danger">Edit</button>
-              <button onClick={deleteButton} className="col btn btn-primary">Delete</button>
+              <button onClick={() => handleDelete(index, 'educationValues')} className="col btn btn-primary">Delete</button>
 
             </div>
           </div>
-          {/* ))} */}
         </section>
-        {/* )} */}
-        <hr />
+);
+        })}
+        <hr/>
 
         <div className="d-flex">
           <p className="fw-bolder fs-2">Employment:</p>

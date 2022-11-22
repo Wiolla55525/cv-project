@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import FormContext from '../Components/OutputSide';
 
 export const EducationInfo = (props) => {
-  
+  const { handleAdd, formValues, handleChange, handleCurrent } = useContext(FormContext);
+
   const [educationInfo, setEducationInfo] = useState({
     education: "",
     school: "",
@@ -10,10 +12,6 @@ export const EducationInfo = (props) => {
     endDate: "",
     description: "",
   });
-
-  const AppContext = React.createContext();
-  const updateText = useContext(AppContext);
-
 
   const onChange = (e) => {
     const name = e.target.name;
