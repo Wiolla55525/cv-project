@@ -14,7 +14,6 @@ export const WorkInfo = (props) => {
         <form className="col form-group">
           <label htmlFor="position">Position</label>
           <input
-            {...props}
             type="text"
             className="form-control"
             name="position"

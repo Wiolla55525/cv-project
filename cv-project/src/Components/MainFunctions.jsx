@@ -3,8 +3,8 @@ import { useState } from 'react';
 export const useGeneralState = () => {
   const [generalState, setGeneralState] = useState({
     mainInfoValues: {}, 
-    experienceValues: [], 
     educationValues: [],
+    experienceValues: [], 
   });
 
   const [formValues, setFormValues] = useState({

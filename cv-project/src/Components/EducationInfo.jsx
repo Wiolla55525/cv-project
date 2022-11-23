@@ -1,30 +1,35 @@
 import React, { useState, useContext } from "react";
+import { FormContext } from "./context/FormContext";
+
 
 export const EducationInfo = (props) => {
 
-  const [educationInfo, setEducationInfo] = useState({
-    education: "",
-    school: "",
-    city: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-  });
+  // const [educationInfo, setEducationInfo] = useState({
+  //   education: "",
+  //   school: "",
+  //   city: "",
+  //   startDate: "",
+  //   endDate: "",
+  //   description: "",
+  // });
 
-  const onChange = (e) => {
-    const name = e.target.name;
-    setEducationInfo({ ...educationInfo, [name]: e.target.value });
-  };
+  // const onChange = (e) => {
+  //   const name = e.target.name;
+  //   setEducationInfo({ ...educationInfo, [name]: e.target.value });
+  // };
 
-  const onSubmit = (e) => {
-    props.setEducation(educationInfo);
-  };
+  // const onSubmit = (e) => {
+  //   props.setEducation(educationInfo);
+  // };
+  const { handleAdd, formValues, handleChange, handleCurrent } =
+  useContext(FormContext);
+
 
   return (
     <div className="form-info education" >
       <h2>Education</h2>
 
-      <form className="p-4" onSubmit={onSubmit}>
+      <form className="p-4" >
         <div className="row">
           <div className="col">
             <label htmlFor="education">Education</label>
@@ -32,7 +37,9 @@ export const EducationInfo = (props) => {
               name="education"
               type="text"
               className="form-control"
-              onChange={onChange}
+              onChange={handleChange}
+              value={formValues.education || ""}
+
               required
             />
           </div>
@@ -44,7 +51,9 @@ export const EducationInfo = (props) => {
               name="school"
               type="text"
               className="col form-control"
-              onChange={onChange}
+              onChange={handleChange}
+              value={formValues.school || ""}
+
               required
             />
           </div>
@@ -54,7 +63,9 @@ export const EducationInfo = (props) => {
               name="city"
               className="form-control"
               type="text"
-              onChange={onChange}
+              onChange={handleChange}
+              value={formValues.city || ""}
+
               required
             />
           </div>
@@ -72,7 +83,9 @@ export const EducationInfo = (props) => {
                 name="startDate"
                 id="startDate"
                 className="form-control"
-                onChange={onChange}
+                onChange={handleChange}
+                value={formValues.startDate || ""}
+
                 required
               />
             </div>
@@ -85,8 +98,9 @@ export const EducationInfo = (props) => {
                   <input
                     type="checkbox"
                     className="form-check-input"
-                    value="Present"
-                    onChange={onChange}
+                    onChange={handleChange}
+                    value={formValues.present || ""}
+
                     required
                   />
                   <label className="form-check-label" htmlFor="studiesPresent">
@@ -100,7 +114,9 @@ export const EducationInfo = (props) => {
                 name="endDate"
                 id="endDate"
                 className="form-control"
-                onChange={onChange}
+                onChange={handleChange}
+                value={formValues.endDate || ""}
+
                 required
               />
             </div>
@@ -113,13 +129,20 @@ export const EducationInfo = (props) => {
             name="description"
             id="description"
             rows="3"
-            onChange={onChange}
+            onChange={handleChange}
+            value={formValues.description || ""}
+
             required
           ></textarea>
         </div>
       </form>
       <div className="row">
-        <button type="submit" onClick={onSubmit} className=" col btn btn-dark">
+      <button
+          type="button"
+          value="Add"
+          onClick={() => handleAdd("educationValues")}
+          className=" col btn btn-dark"
+        >
           Add New
         </button>
       </div>
