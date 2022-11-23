@@ -1,20 +1,13 @@
 import React from "react";
 
-import { createContext, useContext } from 'react';
-
-export const FormContext = createContext({});
+import { useContext } from "react";
+import { CvInfo } from "./CvInfo/index";
+import { FormContext } from "./context/FormContext";
+import { CvCaja } from "./CvCaja/index";
 
 export function OutputSide(props) {
   const { generalState, handleDelete } = useContext(FormContext);
-  const { educationValues } = generalState;
-
-  const deleteButton = () => {
-    console.log('deleting info')
-  }
-
-  const editButton = () => {
-    console.log('editing info')
-  }
+  const { experienceValues } = generalState;
 
   return (
     <div className="col m-2 output-side">
@@ -43,7 +36,7 @@ export function OutputSide(props) {
         <div className="d-flex">
           <p className="fw-bolder fs-2">Education</p>
         </div>
-        {educationValues.map((index) => {
+        {/* {educationValues.map((index) => {
         return (<section key={index}>
           <div className="row">
             <div className="col">
@@ -83,48 +76,68 @@ export function OutputSide(props) {
           </div>
         </section>
 );
-        })}
-        <hr/>
-
+        })} */}
+        <hr />
         <div className="d-flex">
           <p className="fw-bolder fs-2">Employment:</p>
         </div>
         <div className="row">
-          <div className="col">
-            <div className="d-flex">
-              <p className="fw-bold">Position: </p>
-              <p>{props.work.position}</p>
-            </div>
-            <div className="d-flex">
-              <p className="fw-bold">Employer: </p>
-              <p>{props.work.employer}</p>
-            </div>
-            <div className="d-flex">
-              <p className="fw-bold">City: </p>
-              <p>{props.work.city}</p>
-            </div>
-            <div className="d-flex">
-              <p className="fw-bold">Start Date: </p>
-              <p>{props.work.startDate}</p>
-            </div>
-            <div className="d-flex">
-              <p className="fw-bold">End Date: </p>
-              <p>{props.work.endDate}</p>
-              <p>{props.work.present}</p>
-            </div>
+          <CvInfo>
+            <CvCaja>
+              {experienceValues.map((experience, index) => {
+                const {
+                  position,
+                  employer,
+                  city,
+                  startDate,
+                  present,
+                  endDate,
+                  description,
+                } = experience;
+                return (
+                  <div className="col" key={index}>
+                    <div>
+                      <button
+                        onClick={() => handleDelete(index, "experienceValues")}
+                        className="col btn btn-primary"
+                      >
+                        Delete
+                      </button>
+                    </div>
 
-            <div className="d-flex">
-              <p className="fw-bold">Description: </p>
-              <p>{props.work.description}</p>
-            </div>
+                    <div className="d-flex">
+                      <p className="fw-bold">Position: </p>
+                      <p>{position}</p>
+                    </div>
+                    <div className="d-flex">
+                      <p className="fw-bold">Employer: </p>
+                      <p>{employer}</p>
+                    </div>
+                    <div className="d-flex">
+                      <p className="fw-bold">City: </p>
+                      <p>{city}</p>
+                    </div>
+                    <div className="d-flex">
+                      <p className="fw-bold">Start Date: </p>
+                      <p>{startDate}</p>
+                    </div>
+                    <div className="d-flex">
+                      <p className="fw-bold">End Date: </p>
+                      <p>{endDate}</p>
+                      <p>{present}</p>
+                    </div>
 
-            <hr />
-          </div>
-          <div className="col">
-              <button className="col btn btn-danger">Edit</button>
-              <button className="col btn btn-primary">Delete</button>
+                    <div className="d-flex">
+                      <p className="fw-bold">Description: </p>
+                      <p>{description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </CvCaja>
+          </CvInfo>
 
-            </div>
+          <hr />
         </div>
       </div>
     </div>

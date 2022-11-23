@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
-import FormContext from '../Components/OutputSide';
 
 export const EducationInfo = (props) => {
-  const { handleAdd, formValues, handleChange, handleCurrent } = useContext(FormContext);
 
   const [educationInfo, setEducationInfo] = useState({
     education: "",

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export const GeneralInfo = (props) => {
+  console.log({props})
   const [generalInfo, setGeneralInfo] = useState({
     firstName: "",
     lastName: "",
@@ -18,6 +19,7 @@ export const GeneralInfo = (props) => {
 
     props.setGeneral(generalInfo);
   };
+  
   return (
     <div className="form-info general-info">
       <h2>Personal Information</h2>
@@ -32,6 +34,7 @@ export const GeneralInfo = (props) => {
               id="firstName"
               className="form-control"
               onChange={onChange}
+              value={generalInfo.firstName}
             />
           </div>
           <div className="col">
