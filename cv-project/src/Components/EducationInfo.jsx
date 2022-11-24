@@ -4,23 +4,6 @@ import { FormContext } from "./context/FormContext";
 
 export const EducationInfo = (props) => {
 
-  // const [educationInfo, setEducationInfo] = useState({
-  //   education: "",
-  //   school: "",
-  //   city: "",
-  //   startDate: "",
-  //   endDate: "",
-  //   description: "",
-  // });
-
-  // const onChange = (e) => {
-  //   const name = e.target.name;
-  //   setEducationInfo({ ...educationInfo, [name]: e.target.value });
-  // };
-
-  // const onSubmit = (e) => {
-  //   props.setEducation(educationInfo);
-  // };
   const { handleAdd, formValues, handleChange, handleCurrent } =
   useContext(FormContext);
 
@@ -98,7 +81,7 @@ export const EducationInfo = (props) => {
                   <input
                     type="checkbox"
                     className="form-check-input"
-                    onChange={handleChange}
+                    onChange={handleCurrent}
                     value={formValues.present || ""}
 
                     required
@@ -108,17 +91,17 @@ export const EducationInfo = (props) => {
                   </label>
                 </div>
               </div>
-              <input
-                placeholder="Select date"
-                type="date"
-                name="endDate"
-                id="endDate"
-                className="form-control"
-                onChange={handleChange}
-                value={formValues.endDate || ""}
-
-                required
-              />
+              {!formValues.present && (
+                <input
+                  placeholder="Select date"
+                  type="date"
+                  name="endDate"
+                  id="endDate"
+                  className="form-control"
+                  onChange={handleChange}
+                  value={formValues.endDate || ""}
+                />
+              )}
             </div>
           </div>
         </div>
